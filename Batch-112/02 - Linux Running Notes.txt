@@ -1,0 +1,845 @@
+======================================
+ Operating System(Windows+Linux+Mac)
+======================================
+
+=> Operating System is a platform which is used to communicate with computers
+
+=> Operating System acts as mediator between users and computers
+
+=> Operating System is mandatory to use a computer
+
+=> There is no use of computer which doesn't have Operating System
+
+=> Using Operating System we can run applications in Computer
+
+	Ex: Notepad, Calc, Paint, Browser, VLC Player
+
+=> There are several Operating Systems available in the market
+
+		1) Windows OS
+
+		2) Linux OS
+
+		3) Mac OS
+
+============
+Windows OS
+============
+
+-> Developed by Microsoft Company
+
+-> It is GUI Based (Graphical User interface)
+
+-> Easy to use
+
+-> Highly recommended for personal use
+
+   Ex: Watching Movies, Playing Games, Browsing, Storing personal data ....
+
+-> Security features are very less (we need to install Anti Virus softwares)
+
+-> Windows is Licensed Operating System.
+
+-> Windows is single user based OS
+
+==========
+Linux OS
+==========
+
+-> It is free and open source operating system
+
+-> Multi User Based Operating System (multiple users can access at a time)
+
+-> Anti Virus S/w not required for Linux Machines
+
+-> Highly recommended for Server Environments
+
+	Ex: Database, Jenkins, SonarQube, Nexus, Docker, k8s.....
+
+-> Linux is CLI based (Command Line Interface)
+
+=================
+History of Linux
+=================
+
+-> Developed by Linus Torvalds
+
+-> Earlier "Linus Torvalds" used Unix OS and he faced some challenges with Unix OS and he reported to company to change Unix OS but Company rejected his suggestions.
+
+-> Linus Torvalds started developing his own operating by using "Minux OS"
+
+	(Li) nus + Mi (nux) ===> Linux
+
+-> After developing Linux OS "Linux Torvalds" released Linux OS into market for free of cost along with source code.
+
+-> Several Companies downloaded Linux OS source code and modified according to their requirement and released into market with their own brand names. Those are called as Linux Distributions / Flavours .
+
+			1) Amazon Linux
+			2) Ubuntu Linux
+			3) CentOS Linux	
+			4) Debian Linux
+			5) Fedora Linux
+			6) SUSE Linux
+			7) Kali Linux
+			8) RED HAT Linux etc..
+
+
+1) What is Operating System
+
+2) What is Windows OS
+
+3) Linux OS
+
+4) Linux History
+
+5) Linux Distributions
+
+==================================
+Environment Setup to Learn Linux
+=================================
+
+1) Create Account in AWS Cloud & Login into that
+
+2) Create Linux Virtual Machine using EC2 service
+
+3) Connect with Linux VM using MobaXterm software (Windows Users)
+
+4) Practice Linux Commands
+
+===============
+Linux Commands
+===============
+
+whoami : Displays logged in username
+
+date : displays current date
+
+cal : displays calendar
+
+clear : Clear screen
+
+pwd : Display present working directory
+
+cd : change directory
+
+mkdir : To create directory (folder)
+
+rmdir : To remove empty directory
+
+Note: To remove non-empty directory we will use below command
+
+	rm -r <dirname>
+
+ls : List files & directories available in present working directory
+
+	ls -l  : Long listing of the files & directories in alphabetical order
+
+	ls -lr : Long listing of the files & directories in reverse of alphabetical order
+
+	ls -lt : Display latest files on top
+	
+	ls -ltr : Display old files on top
+
+	ls -la : To display hidden files
+
+	ls -li : To display files with inode numbers
+
+mv : To rename/move files & directories
+
+touch : To create empty files
+
+
+=======================
+Text Editors in Linux
+=======================
+
+vi : visual editor
+vim:Improved version
+
+nano: another editor in Linux
+
+=> Using vi we can edit files in linux
+
+	$ vi linux.txt
+
+Insert mode : To insert/modify data we should go to insert mode (press i)
+
+Esc Mode : After modifications completed we should press Esc key
+
+Save and Close : Press :wq to save the changes and close the file.
+
+Close without Saving : press :q! for closing file without saving the changes
+
+to open file in nano filename
+
+ex:nano test.txt
+
+for saving ctrl+o-->Hit enter
+           ctrl+x-->to exit your file
+
+rm : Remove file
+
+rm -rf test.text
+
+all files/directories remove 
+
+rm -rf *
+
+cat : To create files with data, append data to file and display file content
+
+	cat > f1.txt : Create new file with data
+
+	cat f1.txt : Print file content from top to bottom
+
+	cat -n f1.txt : Print file content with line numbers
+
+	cat >> f1.txt : Append data to existing file
+
+
+tac : To print file content from bottom to top
+
+	tac f1.txt
+
+cp : Top copy data from one file to another file
+
+	cp f1.txt f2.txt
+
+
+Note: How to copy more than one file data to another file
+
+	cat m1.txt m2.txt > m3.txt : Copy two files data to 3rd file
+
+
+wc : word count (it will display no.oflines, no.of words and no.of characters in given file)
+
+	wc m3.txt
+
+
+head : Display first 10 lines of the file
+
+ 	head devops.txt (print first 10 lines)
+
+	head -n 15 devops.txt (print first 15 lines)
+
+	head -n 30 devops.tx (print first 30 lines)
+	
+
+tail : Display last 10 lines of the file
+
+	tail devops.txt (print last 10 lines)
+
+	tail -n 15 devops.txt (print last 15 lines)
+
+	tail -n 30 devops.tx (print last 30 lines)
+
+	tail -n +5 devops.txt (print from 5th line to last line)
+
+
+
+
+
+============
+SED command
+===========
+
+=> SED stands for Stream Editor
+
+=> SED command is used for replacement or substitution 
+
+=> We can replace one word with another word using SED command without opening file
+	
+	$ sed 's/linux/unix/' linux.txt
+
+Note: by default sed command will give output to terminal but it won't make changes to original file. To make changes to original file we need to use -i in sed command
+
+	$ sed -i 's/linux/unix/' linux.txt
+
+
+	# delete last line of the file
+	$ sed -i '$d' linux.txt	
+
+	# Delete second line of the file
+	$ sed -i '2d' linux.txt
+
+	# Delete from second line to till last line
+	$ sed -i '2, $d' linux.txt
+
+=============
+grep command
+=============
+
+=> Grep stands for global regular expression print
+
+=> It is used for file content search based on given pattern
+
+
+# Pattern Matching print
+$ grep "keyword" filename
+
+# Pattern Matching by ignoring case sensitive
+$ grep -i 'devops' mydata.txt
+
+# Print matching pattern lines along with line numbers
+$ grep -n 'DEVOPS' mydata.txt
+
+# invert match (print lines which doesn't have given pattern)
+$ grep -v 'DEVOPS' mydata.txt
+
+
+================================
+Working with Zip files in Linux
+================================
+
+Syntax to create To zip file : $ zip <zip-file-name> <files-to-add>
+
+# Create zip file (all .txt files will be added to notes.zip file)
+$ zip notes *.txt
+
+# Print content of zip file
+$ zip -sf notes.zip
+
+# Add new file to existing zip
+$ zip notes f1.txt
+
+# Delete file from zip
+$ zip -d notes f1.txt
+
+# Unzip the files from zip file
+$ unzip <zip-file-name>
+
+# Create zip file with encryption (set password)
+$ zip -e <filename> <files-to-add>
+
+to create archive using tar
+
+tar -cvzf filename.tar.gz filename
+
+to untar tar file
+
+tar -xvzf filename.tar.gz
+
+
+
+===========================
+locate and find commands
+==========================
+
+=> locate and find commands are used for file search
+
+=> locate command will search for the files in locate database.you need to run updated
+
+
+	$ sudo yum install locate
+
+	$ locate 'apache'
+
+
+=> find command is used for more advanced search in linux os
+	
+
+# search for the file under home directory
+$ sudo find /home -name f1.txt
+
+# find empty files under home directory
+$ sudo find /home -type f -empty
+
+# find empty directories under home directory
+$ sudo find /home -type d -empty
+
+
+========================
+Users & Groups in Linux
+========================
+
+=> Linux is Multi User Based OS
+
+=> We can create Multiple User accounts in Linux Machine
+
+=> In Every Linux Machine by default one 'root' user account will be available
+
+		root user => super user / Administrator
+
+Note: Root user will have all priviliges to perform any operation.
+
+=> When we launch EC2 instance using "Amazon Linux AMI" we will get 'ec2-user' by default.
+
+Note: For every user one home directory will be created in Linux machine under 'home' directory
+
+	ec2-user => /home/ec2-user
+
+	ashok => /home/ashok
+
+	raju => /home/raju
+
+	rani => /home/rani
+
+
+=> To get user account information we can use 'id' command in linux machine
+
+	$ id <uname>
+
+# switch to root user account
+$ sudo su -
+
+# logout from root user account
+$ exit
+
+
+====================================
+Working with User Accounts in Linux
+===================================
+
+# swith to root user 
+$ sudo su -
+
+# Create New User Account
+$ useradd <uname>
+
+# Set Password for user account
+$ passwd <uname>
+
+# Display users we have created
+$ cat /etc/passwd
+
+# Delete User (it won't delete user home directory)
+$ userdel <uname>
+
+# Delete user along with user home directory
+$ userdel <uname> --remove
+
+# switch to user account
+$ su <uname>
+
+=====================================
+Working with User Groups in Linux
+=====================================
+
+# Display all user-groups available in Linux
+
+$ cat /etc/group
+
+Note: When we create user in linux machine, it will create user account + user-group
+
+# Create New User-Group
+$ groupadd <group-name>
+
+# Add user to user-group
+$ usermod -aG <group-name> <user-name>
+
+# Remove user from user-group
+$ gpasswd -d <user-name> <group-name>
+
+# Display users belongs to user-group
+$ sudo lid -g <group-name>
+
+# Rename user-group
+$ groupmod -g <new-name> <existing-name>
+
+# Rename user
+$ usermod -l <new-name> <existing-name>
+
+# Delete User Group
+$ groupdel <group-name>
+
+
+
+
+==========================
+File Permissions In Linux
+==========================
+
+=> In Linux VM everything is treated as file (Ex: normal files, directory files)
+
+=> We can secure our files using File Permissions
+
+=> We have 3 types of file permissions
+
+	1) READ (r)
+
+	2) WRITE (w)
+
+	3) EXECUTE (x)
+
+
+=> File Permissions are divided into 3 sections
+
+	1) User Permissions (rwx)
+	2) Group Permissions(rwx)
+	3) OTHERS Permissions (rwx)
+
+	Ex:  rwxrwxrwx
+
+
+=> To change file permissions in linux we can use 'chmod' command
+
+
+Note: "+" is used to add permission and  " - " is used to remove permission
+
+
+# Adding write permission for user on f1.txt file
+$ chmod u+w f1.txt
+
+# Adding execute permission for group
+$ chmod g+x f1.txt
+
+# Remove write permission for group
+$ chmod g-w f1.txt
+
+# Add write and execute permission for others
+$ chmod o+wx f1.txt
+
+# Remove all permissions for others
+$ chmod o-rwx f1.txt
+
+===================================
+File Permissions in Numeric Format
+===================================
+
+0 : No Permission
+
+1 : Execute
+
+2 : Write
+
+3 : Write + Execute => 2 + 1
+
+4 : Read
+
+5 : Read + Execute => 4 + 1
+
+6 : Read + Write => 4 + 2
+
+7 : Read + Write + Execute => 4 + 2 + 1
+
+
+$ chmod 777 f1.xt
+$ chmod 445 f1.txt
+$ chmod 655 f1.txt
+$ chmod 444 f1.txt
+
+Q-1) What are default file permissions in Linux in numeric format ?
+
+Q-2) What are default directory permissions in Linux in numeric format ?
+
+
+
+============================
+Working with chown command
+===========================
+
+=> chown command is used to change file owner and file group
+
+# making ashok as owner for f1.txt file
+$ sudo chown ashok f1.txt
+
+# making dbteam as owner group for f1.txt file
+$ sudo chown :dbteam f1.txt
+
+# Changing owner and group at a time
+$ sudo chown ashok:ashok f1.txt
+
+Note: We can use userid and group id also in chown command instead of names.
+
+
+
+
+===========================
+Hard Links and Soft Links
+===========================
+
+=> In Linux we can create Link files (similar to shortcuts in windows)
+
+=> We have 2 types of links in Linux
+
+	1) Hard Link
+
+	2) Soft Link
+
+---------------------------
+Syntax To create Hard Link
+--------------------------
+
+$ ln <orginal-file> <link-file>
+
+$ touch m1.txt
+
+$ ln m1.txt m10.txt
+
+$ cat > m1.txt
+
+$ cat m10.txt
+
+$ ls -li
+
+Note-1: original file and link file will have same inode number
+
+Note-2: When we write data to original file then it will reflect in link file also.
+
+Note-3: When we delete original file link file is not effected (hard link)
+
+---------------------------
+Syntax To create soft Link
+---------------------------
+
+$ ln -s <original-file> <link-file>
+
+$ touch f1.txt
+
+$ ln -s f1.txt f10.txt
+
+$ ls -li
+
+$ cat > f1.txt
+
+$ cat > f10.txt
+
+$ rm f1.txt
+
+$ ls -li
+
+Note: When we remove original file then soft link file will become dangling. We can't access it.
+
+=============================
+Process Management in Linux
+============================
+
+=> Process represents running application
+
+=> In Windows machine we can see running processes using "Task Manager"
+
+=> In Linux machine we can see running process using ps command
+
+$ ps
+
+$ top
+
+=> To kill process in linux machine we will use kill command
+
+	$ kill -9 <process-id>
+
+=====================
+Networking Commands
+=====================
+
+# To get ip address of machine
+$ ifconfig
+
+# To check connectivity
+$ ping <ip>
+$ ping www.google.com
+$ ping www.facebook.com
+
+# To download files using url
+$ wget <url>
+$ wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.zip
+
+# To send HTTP Request to URL
+$ curl <url>
+
+
+========================
+Utility Commands
+========================
+
+# Display memory details
+$ free
+
+# Install htop command
+$ sudo yum insall htop
+
+# memory details with dynamic view
+$ htop
+
+# Display OS information
+$ cat /etc/os-release
+
+# Display Kernel Version
+$ uname -r
+
+# Check all Users Login history In Linux
+$ lastlog
+
+# Check Specific User login history
+$ last <uname>
+
+# Get last 3 login details
+$ last -3
+
+
+===========================
+Package Managers in Linux
+===========================
+
+=> Package Managers are used to install softwares in Linux Machines
+
+=> We have several package managers in linux
+
+1) yum (Yellow Dog updater & modified)
+
+	Ex: Amazon Linux, RED HAT Linux, CentOS
+
+2) apt  (Advanced Packaged Tool)
+
+	Ex: Ubuntu
+
+3) dnf  (Dandified YUM package) 
+	
+	Ex: It is replacing yum in latest versions of centos
+
+
+# Install Java in Amazon Linux
+$ sudo yum install java
+
+# Check Java version
+$ java -version
+
+# Install Maven in Amazon Linux
+$ sudo yum install maven
+
+# Check Maven version
+$ mvn -v
+
+# Install git client in Amazon Linux
+$ sudo yum install git
+
+# Check Git version
+$ git -v
+
+# check path of packages we installed
+$ whereis java
+$ whereis mvn
+$ whereis git
+
+
+=========================
+What is a Sudoers File?
+========================
+
+=> A Sudoers file is just like any other file on a Linux Operating System. 
+
+=> It plays a vital role in managing what a “User” or “Users in a Group” can do on the system.
+
+======================
+Why the name Sudoers?
+======================
+
+=> The word Sudo is the abbreviation of the term “Super User Do”. 
+
+=> The users with Sudo permission are called as Sudo Users. 
+
+=> Management of all these sudo users is done through a file called as Sudoers File. 
+
+=> This file also lives in the /etc directory just like any other configuration file.
+
+$ sudo cat /etc/sudoers
+
+##### User Privilege Specification #####
+
+root ALL = (ALL:ALL) ALL
+
+Note: ‘#’ indicates comment in the file, OS will ignore this line while executing.
+
+Syntax : User <space> OnHost = (Runas-User:Group) <space> Commands
+
+Example: root ALL = (ALL:ALL) ALL
+
+Read it as — User Root can Run Any Command as Any User from Any Group on Any Host.
+
+
+→ The first ALL is used to define HOSTS. We can define Hostname/Ip-Address instead of ALL. ALL means any host.
+
+→ Second ALL : Third ALL is User:Group. Instead of ALL we can define User or User with the group like User:Group. ALL:ALL means All users and All groups.
+
+→ Last ALL is the Command. Instead of ALL, we can define a command or set of commands. ALL means all commands.
+
+#### To put it very simple, it is “who where = (as_whom) what”. ####
+
+
+=> Tnother example to clearly understand the fields in the syntax:
+
+Example : ashok ALL = (root) /usr/bin/cat /etc/shadow
+
+Read this as — User “ashok” can Run the command “/usr/bin/cat /etc/shadow” as ROOT user on all the HOSTS.
+
+
+## Edit sudoers file
+$ sudo visudo
+
+## close sudeors file
+$ ctrl + x
+
+=================================
+What is .bashrc file in linux ?
+=================================
+
+=> It is used to configure environment variables in Linux Machines
+
+	Ex: Java Path, Maven Path etc....
+
+=> For every user account one .bashrc file will be available under user home directory
+
+=> .bashrc file is hidden file. To see this we need to execute 'ls -la'	
+
+
+=========================
+What is .ssh in linux ?
+==========================
+
+=> This is hidden directory which contains authorized_keys (pem file public key)
+
+=> We can get our authorized_key using below command
+
+$ cat .ssh/authorized_keys
+
+
+1) What is Operating System
+2) Windows OS
+3) Linux OS
+4) Linux Distributions (200+)
+5) Linux Virtual Machine Setup in AWS
+6) Connect with Linux VM using MobaXterm
+7) Connect with Linux VM using Putty
+8) Linux commands
+9) Working with Directories
+10) Working with Files
+11) Text Editors (vi & sed)
+12) Pattern Matching (grep)
+13) head & tail
+15) User Management 
+16) Group Management
+17) File Permissions (chmod)
+18) Ownership (chown)
+19) find and locate 
+20) Working with zip files
+21) Network commands
+22) Package Managers
+23) Sudoers file
+24) .bashrc file
+25) .ssh Authorized keys
+26.awk command
+
+
+====================
+Linux Architecture
+====================
+
+1) Applications / Commands
+
+2) Shell : It is mediator between application/users and kernel. It will verify command syntax.
+
+3) Kernel : It is mediator between Shell and Linux Hardware components
+
+4) Hardware
+
+
+
+
+
+
+
+
+
+
+
+
+
