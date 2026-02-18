@@ -1,0 +1,14 @@
+200~1.	Executive Summary
+ Hospital Management System provides user-friendly interface for hospital admin user to manage their patient’s and doctor’s data. Even patients can access this portal. 
+
+2. Requirements - This application should have user registration and login system
+     - Hospital admin should be able to add, edit and delete patient information. 
+    Search functionality should be provided based on patient name, Id and other relevant        information.
+    -Ability to view patient’s medical history including diagnosis, medications.
+    - Hospital admin should be able to upload medical documents such as lab reports or images. Once Hospital admin uploads reports, patient should be able to view it.
+   - Hospital admin should be able to view and schedule appointments for patients.
+
+
+ Use story 1 – Home screen to create patient registration /login and hospital admin login. 
+
+
